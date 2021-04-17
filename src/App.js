@@ -1,25 +1,44 @@
+
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+// stylesheet
+import "./assets/styles.css"
 
-export default App;
+// page for route
+import MateriOne from "./page/materi1";
+import MateriTwo from "./page/materi2";
+
+// eslint-disable-next-line react-hooks/rules-of-hooks
+export default class App extends Component {
+
+  constructor(props){
+    super(props);
+    this.state ={
+      useActivenav: "materiOne",
+    }
+  }
+
+  render() {
+    return (
+      <Router>
+        <div className="container">
+          <div className="navbar">
+            <ul className="ulNavbar">
+              <li><Link to={"/"} className={this.state.useActivenav == "materiOne" ? "active li-Nav" : "li-Nav"} onClick={() => this.setState({ useActivenav: "materiOne" })}>Tugas Materi Pertama</Link></li>
+              <li><Link to={"/materitwo"} className={this.state.useActivenav == "materiTwo" ? "active li-Nav" : "li-Nav"} onClick={() => this.setState({ useActivenav: "materiTwo" })}>Tugas Materi Kedua</Link></li>
+            </ul>
+          </div>
+          <div className="content">
+            <Switch>
+              <Route exact path="/" component={MateriOne} />
+              <Route exact path="/materitwo" component={MateriTwo} />
+            </Switch>
+          </div>
+        </div>
+      </Router>
+    )
+  }
+}
