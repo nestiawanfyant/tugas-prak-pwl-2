@@ -29,7 +29,6 @@ class materi2 extends Component {
     };
 
     render() {
-
         return (
             <div className="d-flex">
                 { 
@@ -37,7 +36,7 @@ class materi2 extends Component {
                     (this.state.isLoading == false) ? 
                         this.state.data.map((datasAPI, index) => 
                             <div className="card" key={index}>
-                                <a href="">
+                                <a href={datasAPI.source}>
                                     <img src={datasAPI.images} width="100%" height="190"/>
                                     <h3> {datasAPI.title} </h3> 
                                     <p> {datasAPI.date} </p> 
