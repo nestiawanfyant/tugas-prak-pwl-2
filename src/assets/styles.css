@@ -1,3 +1,8 @@
+a {
+    text-decoration: none;
+    color: rgb(34, 34, 34);
+}
+
 .container {
     max-width: 90%;
     width: 90%;
@@ -6,7 +11,7 @@
 
 .navbar {
     padding: 15px;
-    width: 100%;
+    width: 97.6%;
     border-radius: 50px;
     margin: 10px 0;
     box-shadow: 0 .5rem 5rem rgba(119, 119, 119, 0.15)!important;
@@ -55,5 +60,48 @@
 
 .rowMateri1 {
     width: 50%;
+}
+
+.d-flex {
+    display: flex;
+    justify-content:lefy;
+    flex-wrap: wrap !important;
+    flex-direction: row !important;
+}
+
+.card { 
+    width: 21.8%;
+    border-radius: 5px;
+    /* border: 1px solid #f8f8f8; */
+    padding: 10px;
+    margin-top: 13px !important;
+    margin: 7px;
+}
+
+.card > a > img {
+    border-radius: 5px;
+}
+
+.card > a > h3 {
+    font-size: 21px;
+    transition: all .2s
+}
+
+.card > a > h3:hover {
+    color: rgb(80, 80, 226);
+}
+
+
+.card > a > p {
+    margin-top: -14px;
+    font-size: 11px;
+    font-weight:500;
+    color: rgb(65, 65, 65);
+}
+
+.LoadingData {
+    margin-top: 40px;
+    font-size: 24px;
+    font-weight: 700;
 }
 
