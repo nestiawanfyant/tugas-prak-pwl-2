@@ -8,21 +8,10 @@ const setupPixelleftright = { positionBoxLeftRight: 30 }
 
 const setupReducer = (state, action) => {
 
-    if(action.type === "top"){
-        return { positionBoxTopBottom: state.positionBoxTopBottom + 10 }
-    }
-
-    if(action.type === "left"){
-        return { positionBoxLeftRight: state.positionBoxLeftRight + 10 }
-    }
-
-    if(action.type === "bottom"){
-        return { positionBoxTopBottom: state.positionBoxTopBottom - 10 }
-    }
-
-    if(action.type === "right"){
-        return { positionBoxLeftRight: state.positionBoxLeftRight - 10 }
-    }
+    if(action.type === "top"){ return { positionBoxTopBottom: state.positionBoxTopBottom + 10 }}
+    if(action.type === "left"){ return { positionBoxLeftRight: state.positionBoxLeftRight + 10 }}
+    if(action.type === "bottom"){ return { positionBoxTopBottom: state.positionBoxTopBottom - 10 }}
+    if(action.type === "right"){ return { positionBoxLeftRight: state.positionBoxLeftRight - 10 }}
 }
 
 export default function reducer() {
